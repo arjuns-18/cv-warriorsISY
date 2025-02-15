@@ -30,6 +30,7 @@ function startCountdown() {
 
   startButton.disabled = true;
   isTimerActive = true; 
+  animalImage.src = "";
 }
 
 function updateCountdown() {
@@ -82,7 +83,7 @@ function animateEggAfterTimeUp() {
 }
 
 function animateFishAfterTimeUp(){
-  let randomNumber = Math.floor(Math.random() * 5) + 1;
+  let randomNumber = Math.floor(Math.random() * 4) + 1;
   const fishInterval = 150; 
   if (randomNumber === 1){
     setInterval(() => {
@@ -93,17 +94,14 @@ function animateFishAfterTimeUp(){
           index = 1;
         }
       }
-      else {
-        animalImage.src = "";
-      }
     }, fishInterval);
   }
   else if(randomNumber === 2){
     setInterval(() => {
       if (!isTimerActive) {
-        animalImage.src = `fishanimation/anglerfish/angler${index}.png`;
+        animalImage.src = `fishanimation/eel/eel${index}.png`;
         index++;
-        if (index > 4) {
+        if (index > 6) {
           index = 1;
         }
       }
@@ -112,9 +110,9 @@ function animateFishAfterTimeUp(){
   else if(randomNumber === 3){
     setInterval(() => {
       if (!isTimerActive) {
-        animalImage.src = `fishanimation/anglerfish/angler${index}.png`;
+        animalImage.src = `fishanimation/octopus/octopus${index}.png`;
         index++;
-        if (index > 4) {
+        if (index > 6) {
           index = 1;
         }
       }
@@ -123,18 +121,7 @@ function animateFishAfterTimeUp(){
   else if(randomNumber === 4){
     setInterval(() => {
       if (!isTimerActive) {
-        animalImage.src = `fishanimation/anglerfish/angler${index}.png`;
-        index++;
-        if (index > 4) {
-          index = 1;
-        }
-      }
-    }, fishInterval);
-  }
-  else if(randomNumber === 5){
-    setInterval(() => {
-      if (!isTimerActive) {
-        animalImage.src = `fishanimation/anglerfish/angler${index}.png`;
+        animalImage.src = `fishanimation/turtle/${index}.png`;
         index++;
         if (index > 4) {
           index = 1;
@@ -148,6 +135,7 @@ function animateFishAfterTimeUp(){
 function stopTimerAndBreakEgg() {
   clearInterval(timerInterval);
   eggImage.src = "eggs/eggs7.png";
+  animalImage.src = "";
   eggCrackSoundPlayed = false;
   startButton.disabled = false;
   isTimerActive = false;
