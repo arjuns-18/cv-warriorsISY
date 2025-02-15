@@ -58,7 +58,7 @@ body {
 
 @keyframes textAnimationInhale {
   0%, 50%, 100% {
-    opacity: 0; /* "Inhale" text hidden at the start, end, and when shrinking */
+    opacity: 0; 
   }
   25% {
     opacity: 1; /* "Inhale" text visible when the circle is expanding */
