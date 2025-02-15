@@ -45,41 +45,31 @@ body {
 
 .exhale {
   animation: textAnimationExhale 4s ease-in-out infinite;
-  animation-delay: 2s; /* Delay the exhale text */
 }
 
 @keyframes inhaleExhale {
-  0% {
-    transform: scale(1);
-  }
-  25% {
-    transform: scale(1.25);
+  0%, 100% {
+    transform: scale(1); /* Circle at original size */
   }
   50% {
-    transform: scale(1.5);
-  }
-  75% {
-    transform: scale(1.25);
-  }
-  100% {
-    transform: scale(1);
+    transform: scale(1.5); /* Circle at max size */
   }
 }
 
 @keyframes textAnimationInhale {
-  0%, 25%, 75%, 100% {
-    opacity: 0;
+  0%, 50%, 100% {
+    opacity: 0; /* "Inhale" text hidden at the start, end, and when shrinking */
   }
-  50% {
-    opacity: 1; /* "Inhale" appears when the circle reaches max size */
+  25% {
+    opacity: 1; /* "Inhale" text visible when the circle is expanding */
   }
 }
 
 @keyframes textAnimationExhale {
-  0%, 50%, 25%, 100% {
-    opacity: 0;
+  0%, 25%, 100% {
+    opacity: 0; /* "Exhale" text hidden at the start, during expansion, and end */
   }
   75% {
-    opacity: 1; /* "Exhale" appears when the circle is shrinking */
+    opacity: 1; /* "Exhale" text visible when the circle is shrinking */
   }
 }
