@@ -17,11 +17,32 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+        <header>
+            <nav>
+                <!-- <p id="title">Fauna: Start Focusing!</p> -->
+                <ul>
+                    <li><a href="friendspage.html"><img id="friendIcon" src="icons/friends icon.png" width="3%" /></a></li>
+                    <li><a href="mindfulness.html"><img id="friendIcon" src="icons/mindfulness.png" width="3%" /></a></li>
+                    <li><a href="index.html"><img id="friendIcon" src="icons/start focus.png" width="3%" /></a></li>
+                    <li><a href="settings.html"><img id="friendIcon" src="icons/settings.png" width="3%" /></a></li>
+                    <li><a href="stats.html"><img id="friendIcon" src="icons/stats.png" width="3%" /></a></li>
+                </ul>
+            </nav>
+        </header>
+
         <h1>Friends Page</h1>
 
         <h2>Your Friends</h2>
         <button id="codeButton">Generate Friend Code</button>
         <p id="friendCode">Code:</p>
+
+        <div id="codeModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" id="closeButton">&times;</span>
+                <p id="largeCode" style="font-size: 3em;"></p>
+            </div>
+        </div>
+
         
         <script src="friendspage.js" async defer></script>
     </body>
