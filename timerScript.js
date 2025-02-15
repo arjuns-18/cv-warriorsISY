@@ -76,9 +76,3 @@ document.addEventListener('visibilitychange', function () {
 });
 
 startButton.addEventListener('click', startCountdown);
-
-// document.addEventListener("visibilitychange", () => {
-//     if (document.visibilityState === "hidden" && timeLeft > 0) {
-//       alert("you left the site!");
-//     }
-//   });
