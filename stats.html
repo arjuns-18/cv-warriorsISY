@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Statistics</title>
+    <link rel="stylesheet" href="stats.css">
+</head>
+<body>
+    <div class="stats-container">
+        <h1>Study Statistics</h1>
+        
+        <!-- User Info Section -->
+        <div class="user-info">
+            <p id="username">Username</span>
+        </div>
+
+        <!-- Main Stats Display -->
+        <div class="stats-grid">
+            <!-- Total Study Time -->
+            <div class="stat-card">
+                <h2>Total Study Time</h2>
+                <div class="stat-value" id="total-hours">0</div>
+                <div class="stat-label">hours</div>
+            </div>
+
+            <!-- Study Streak -->
+            <div class="stat-card">
+                <h2>Current Streak</h2>
+                <div class="stat-value" id="streak">0</div>
+                <div class="stat-label">days</div>
+            </div>
+
+            <!-- Sessions Completed -->
+            <div class="stat-card">
+                <h2>Sessions Completed</h2>
+                <div class="stat-value" id="sessions">0</div>
+                <div class="stat-label">sessions</div>
+            </div>
+
+            <!-- Average Session Length -->
+            <div class="stat-card">
+                <h2>Average Session</h2>
+                <div class="stat-value" id="avg-session">0</div>
+                <div class="stat-label">minutes</div>
+            </div>
+        </div>
+
+        <!-- Weekly Progress -->
+        <div class="weekly-progress">
+            <h2>Weekly Progress</h2>
+            <div class="week-grid">
+                <div class="day" data-day="Mon">M</div>
+                <div class="day" data-day="Tue">T</div>
+                <div class="day" data-day="Wed">W</div>
+                <div class="day" data-day="Thu">T</div>
+                <div class="day" data-day="Fri">F</div>
+                <div class="day" data-day="Sat">S</div>
+                <div class="day" data-day="Sun">S</div>
+            </div>
+        </div>
+
+        <!-- Achievement Section -->
+        <div class="achievements">
+            <h2>Achievements</h2>
+            <div class="achievement-grid">
+                <div class="achievement" id="achievement1">
+                    <img id="one" src="icons/one.png" alt="First Hour">
+                    <p>First Hour</p>
+                </div>
+                <div class="achievement" id="achievement2">
+                    <img id="five" src="icons/five.png" alt="5 Day Streak">
+                    <p>5 Day Streak</p>
+                </div>
+                <div class="achievement" id="achievement3">
+                    <img id="ten" src="icons/ten.png" alt="10 Sessions">
+                    <p>10 Sessions</p>
+                </div>
+                <!-- Add more achievements as needed -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="friends.html"><img src="icons/friends icon.png" alt="Friends"></a></li>
+            <li><a href="mindfulness.html"><img src="icons/mindfulness.png" alt="Mindfulness"></a></li>
+            <li><a href="index.html"><img src="icons/start focus.png" alt="Focus"></a></li>
+            <li><a href="settings.html"><img src="icons/settings.png" alt="Settings"></a></li>
+            <li><a href="stats.html"><img src="icons/stats.png" alt="Stats"></a></li>
+        </ul>
+    </nav>
+
+    <script src="stats.js"></script>
+</body>
+</html>
