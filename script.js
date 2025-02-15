@@ -39,3 +39,6 @@ function loginbtnClicked() {
         errorLogin.textContent = "Incorrect username or password";
     }
 }
+
+var savedUsername = "";
+var savedPassword = "";
