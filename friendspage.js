@@ -12,3 +12,4 @@ function codeGenerate() {
 
   // Pass the function reference (no parentheses)
   document.getElementById('codeButton').addEventListener('click', codeGenerate);
+
