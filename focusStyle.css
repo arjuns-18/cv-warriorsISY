@@ -115,14 +115,20 @@ body {
 
 .modal {
     display: none; /* Keep it hidden initially */
-    position: fixed;
-    z-index: 1000;
-    left: 50%;
+    position: fixed; /* Ensures it stays in place */
     top: 50%;
-    transform: translate(-50%, -50%);
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the modal */
+    width: 60vw; /* Adjust width */
+    max-width: 400px; /* Prevent it from being too large */
+    height: auto; /* Allow it to adjust */
+    max-height: 90vh; /* Prevent it from overflowing */
     background-color: white;
     padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    z-index: 9999; /* Ensures it stays above everything */
 }
 
 .modal-content {
@@ -132,6 +138,8 @@ body {
     width: 50%;
     max-width: 500px;
     position: relative;
+    overflow-x: hidden; /* remove horizontal scroll */
+      
 }
 
 .close {
