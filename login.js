@@ -56,5 +56,3 @@ function loginbtnClicked() {
 }
 const username = document.querySelector("#username")
 const hoursstudied = document.querySelector("#hoursstudied")
-
-username.textContent = savedUsername;
