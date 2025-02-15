@@ -1,0 +1,8 @@
+{
+    "build": {
+      "env": {
+        "NEXT_PUBLIC_SITE_URL": "https://yourdomain.vercel.app"
+      }
+    }
+  }
+  
