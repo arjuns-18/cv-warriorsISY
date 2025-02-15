@@ -2,7 +2,10 @@ let timerInterval;
 let time;
 let originalTime;
 let eggCrack = new Audio("sounds/eggcrack.mp3");
-let eggCrackSoundPlayed = false;
+let isTimerActive = false;  
+// let lofi1 = new Audio("");
+// let 
+// let eggCrackSoundPlayed = false;
 
 const countdownEl = document.getElementById('countdown');
 const startButton = document.getElementById('startButton');
@@ -24,6 +27,7 @@ function startCountdown() {
   timerInterval = setInterval(updateCountdown, 1000);  // Start the countdown
 
   startButton.disabled = true;
+  isTimerActive = true; 
 }
 
 function updateCountdown() {
@@ -56,6 +60,7 @@ function updateCountdown() {
     animateEggAfterTimeUp();
     startButton.disabled = false;
     eggCrackSoundPlayed = false;
+    isTimerActive = false;
   }
 }
 
@@ -78,16 +83,17 @@ function stopTimerAndBreakEgg() {
   eggImage.src = "eggs/eggs7.png";
   eggCrackSoundPlayed = false;
   startButton.disabled = false;
+  isTimerActive = false;
 }
 
 document.addEventListener('visibilitychange', function () {
-  if (document.hidden) {
+  if (document.hidden && isTimerActive) {
     stopTimerAndBreakEgg();
   }
 });
 
-// <<<<<<< Updated upstream
-// startButton.addEventListener('click', startCountdown);
+
+startButton.addEventListener('click', startCountdown);
 
 // =======
 // document.addEventListener("DOMContentLoaded", function () {
