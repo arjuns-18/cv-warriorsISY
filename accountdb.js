@@ -4,10 +4,9 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
-import {
-  getFirestore,set,get,update,remove,ref,ollection,addDoc,getDocs,query,where,
-  getDatabase
-} from "firebase/database";
+import { getDatabase, ref, set, get, update, remove } from "firebase/database";
+import { getFirestore, collection, addDoc, getDocs, query, where } from "firebase/firestore";
+
 
 /****************************************************
  * 2) FIREBASE CONFIG
@@ -27,7 +26,8 @@ const firebaseConfig = {
  ****************************************************/
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const db = getDatabase();
+const db = getDatabase(app);
+
 
 
 var usernameInput = document.querySelector("#usertb");
