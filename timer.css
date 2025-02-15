@@ -9,7 +9,7 @@
 #animal{
     position: absolute;
     width: 10%;
-    top: 35%;
+    top: 39%;
     left: 50%;
     transform: translate(-50%, -50%);
 }

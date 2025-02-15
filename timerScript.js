@@ -60,6 +60,7 @@ function updateCountdown() {
   if (time < 0) {
     clearInterval(timerInterval);
     animateEggAfterTimeUp();
+    animateFishAfterTimeUp();
     startButton.disabled = false;
     eggCrackSoundPlayed = false;
     isTimerActive = false;
@@ -82,7 +83,7 @@ function animateEggAfterTimeUp() {
 
 function animateFishAfterTimeUp(){
   let randomNumber = Math.floor(Math.random() * 5) + 1;
-  const fishInterval = 50; 
+  const fishInterval = 150; 
   if (randomNumber === 1){
     setInterval(() => {
       if (!isTimerActive) {
@@ -91,6 +92,9 @@ function animateFishAfterTimeUp(){
         if (index > 4) {
           index = 1;
         }
+      }
+      else {
+        animalImage.src = "";
       }
     }, fishInterval);
   }
