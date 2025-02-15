@@ -10,7 +10,8 @@ nav {
     padding: 15px 30px;
     border-radius: 35px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    z-index: 1000; /* Ensures nav stays on top */
+    z-index: 1000;
+    /* Ensures nav stays on top */
 }
 
 nav ul {
@@ -35,7 +36,8 @@ nav ul li a {
 }
 
 nav ul li a img {
-    width: 24px; /* Fixed width instead of percentage */
+    width: 24px;
+    /* Fixed width instead of percentage */
     height: 24px;
     transition: transform 0.3s ease;
 }
@@ -77,15 +79,15 @@ nav ul li a:hover img {
     }
 }
 
-#egg{
+#egg {
     position: absolute;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 
-body{
+body {
     background-image: url(underwatergif.gif);
     background-repeat: no-repeat;
     background-size: cover;
@@ -93,13 +95,13 @@ body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 15pt;
     padding: 10px 30px 5px;
-    width: 100vw;   
-    height: 100vh;  
-    margin: 0;      
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
     overflow: hidden;
 }
 
-#startFocusing{
+#startFocusing {
     text-decoration: none;
     padding: 10px 20px;
     background: orange;
@@ -109,4 +111,35 @@ body{
     top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
 }
