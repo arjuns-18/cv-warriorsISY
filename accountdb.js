@@ -36,7 +36,7 @@ var passwordInput = document.querySelector("#passtb");
 var login = document.querySelector("#login");
 var signup = document.querySelector("#signup")
 
-function login() {
+function loginf() {
     set(ref(db, "Logininfo/" + usernameInput.value), {
       Email: emailInput.value,
       Username: usernameInput.value,
@@ -45,14 +45,14 @@ function login() {
     .then (()=>{
         alert("Data Stored")
     })
-  //   .catch (error()=> {      
-  //     alert()
-  // } )
+    .catch((error) => {      
+      alert("Error: " + error.message);
+  });
 }
 
 function signup() {
 
 }
 
-login.addEventListener('click', login);
+login.addEventListener('click', loginf);
 signup.addEventListener('click', signup);
