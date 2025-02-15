@@ -1,23 +1,7 @@
-// const startingMinutes = 10; 
-// let time = startingMinutes * 60; 
-
-// const countdownEl = document.getElementById('countdown'); 
-
-// setInterval(updateCountdown, 1000);
-
-// function updateCountdown(){
-//     const minutes = Math.floor(time / 60); 
-//     let seconds = time % 60; 
-
-//     seconds = seconds < 10 ? '0' + seconds : seconds;  
-
-//     countdownEl.innerHTML = `${minutes}:${seconds}`; 
-
-//     time--; 
-// }
-
-let timerInterval;
+    let timerInterval;
     let time;
+    let originalTime; 
+
 
     const countdownEl = document.getElementById('countdown');
     const startButton = document.getElementById('startButton');
@@ -33,7 +17,8 @@ let timerInterval;
         return;
       }
 
-      time = inputMinutes * 60;  
+      originalTime = inputMinutes *60
+      time = originalTime;  
       clearInterval(timerInterval); // Clear any existing intervals to prevent multiple timers
       timerInterval = setInterval(updateCountdown, 1000);  // Start the countdown
 
@@ -41,33 +26,44 @@ let timerInterval;
       startButton.disabled = true;
     }
 
-    // Function to update the countdown
     function updateCountdown() {
-      const minutes = Math.floor(time / 60);
-      let seconds = time % 60;
+        // Calculate minutes and seconds for display
+        const minutes = Math.floor(time / 60);
+        let seconds = time % 60;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+        countdownEl.innerHTML = `${minutes}:${seconds}`;
 
-      // Format seconds with leading zero if needed
-      seconds = seconds < 10 ? '0' + seconds : seconds;
+        if (time <= originalTime / 4) {
+          eggImage.src = "eggs/egg3.png";
+        } else if (time <= originalTime / 2) {
+          eggImage.src = "eggs/egg2.png";
+        } else {
+          eggImage.src = "eggs/egg1.png"; 
+        }
+        
+        time--;
+  
+        // When time runs out, stop the timer and update the display
+        if (time < 0) {
+          clearInterval(timerInterval);
+          animateEggAfterTimeUp();
+          startButton.disabled = false; // Re-enable the start button for a new timer
+        }
+      }
 
-      countdownEl.innerHTML = `${minutes}:${seconds}`;
-
-      time--;
-    
-
-      if (time<=inputMinutes*60)
+      function animateEggAfterTimeUp() {
+        let eggCount = 4; 
+        const intervalTime = 500; 
       
-      if (time < 0) {
-        clearInterval(timerInterval);
-        countdownEl.innerHTML = "Time's up!";
-        startButton.disabled = false; // Re-enable the start button after the timer finishes
+        const animationInterval = setInterval(() => {
+          if (eggCount <= 6) {
+            eggImage.src = `eggs/eggs${eggCount}.png`;
+            eggCount++;
+          } else {
+            clearInterval(animationInterval); 
+          }
+        }, intervalTime);
       }
-      else if (time/2 <= inputMinutes*60){
-        eggImage.src = "eggs/egg2.png";
-      }
-      else if (time/4 <= inputMinutes*60){
-        eggImage.src = "egg/egg3.png";
-      }
-    }
 
     // Add event listener to start button
     startButton.addEventListener('click', startCountdown);
