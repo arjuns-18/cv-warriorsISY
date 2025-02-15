@@ -3,13 +3,16 @@ let time;
 let originalTime;
 let eggCrack = new Audio("sounds/eggcrack.mp3");
 let isTimerActive = false;  
+let eggCrackSoundPlayed = false;
 let lofi1 = new Audio("sounds/lofi1.mp3");
 let lofi2 = new Audio("sounds/lofi2.mp3");
+let index = 1; 
 
 const countdownEl = document.getElementById('countdown');
 const startButton = document.getElementById('startButton');
 const minuteInput = document.getElementById('minuteInput');
 const eggImage = document.getElementById('egg');
+const animalImage = document.getElementById('animal');
 
 // Function to start the countdown
 function startCountdown() {
@@ -76,6 +79,67 @@ function animateEggAfterTimeUp() {
     }
   }, intervalTime);
 }
+
+function animateFishAfterTimeUp(){
+  let randomNumber = Math.floor(Math.random() * 5) + 1;
+  const fishInterval = 50; 
+  if (randomNumber === 1){
+    setInterval(() => {
+      if (!isTimerActive) {
+        animalImage.src = `fishanimation/anglerfish/angler${index}.png`;
+        index++;
+        if (index > 4) {
+          index = 1;
+        }
+      }
+    }, fishInterval);
+  }
+  else if(randomNumber === 2){
+    setInterval(() => {
+      if (!isTimerActive) {
+        animalImage.src = `fishanimation/anglerfish/angler${index}.png`;
+        index++;
+        if (index > 4) {
+          index = 1;
+        }
+      }
+    }, fishInterval);
+  }
+  else if(randomNumber === 3){
+    setInterval(() => {
+      if (!isTimerActive) {
+        animalImage.src = `fishanimation/anglerfish/angler${index}.png`;
+        index++;
+        if (index > 4) {
+          index = 1;
+        }
+      }
+    }, fishInterval);
+  }
+  else if(randomNumber === 4){
+    setInterval(() => {
+      if (!isTimerActive) {
+        animalImage.src = `fishanimation/anglerfish/angler${index}.png`;
+        index++;
+        if (index > 4) {
+          index = 1;
+        }
+      }
+    }, fishInterval);
+  }
+  else if(randomNumber === 5){
+    setInterval(() => {
+      if (!isTimerActive) {
+        animalImage.src = `fishanimation/anglerfish/angler${index}.png`;
+        index++;
+        if (index > 4) {
+          index = 1;
+        }
+      }
+    }, fishInterval);
+  }
+}
+
 
 function stopTimerAndBreakEgg() {
   clearInterval(timerInterval);

@@ -6,6 +6,14 @@
     transform: translate(-50%, -50%);
 }
 
+#animal{
+    position: absolute;
+    width: 10%;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 #enterNumber {
     color: white;
 }
