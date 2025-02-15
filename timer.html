@@ -25,13 +25,15 @@
 
         <main>
             <p>
-                <label id = "timerInput" for="timeInput">Enter time in seconds:</label>
-                <p id = "countdown">10:00</p>
+                <!-- <label id = "timerInput" for="timeInput">Enter time in seconds:</label> -->
+                <label id = "enterNumber" for="minuteInput">Enter time in minutes:</label color: white>
+                <input type="number" id="minuteInput" placeholder="e.g., 10" min="1">
               </p>
               <p>
                 <button id="startButton">Start Timer</button>
               </p>
-              <div id="timer"></div>
+
+              <p id = "countdown"></p>
 
             <figure>
                 <img id="egg" src="eggs/egg1.png" width="10%"/>

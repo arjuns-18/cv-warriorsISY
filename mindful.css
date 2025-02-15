@@ -1,61 +1,59 @@
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #e0f7fa;
-    }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffffff;
+}
 
-    .circle {
-      width: 150px;
-      height: 150px;
-      background-color: #00796b;
-      border-radius: 50%;
-      animation: inhaleExhale 4s ease-in-out infinite;
-    }
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+/* Static Background Circle */
+.background-circle {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-color: rgba(144, 202, 249, 0.2);
+  border-radius: 50%;
+}
 
-    .container {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+/* Animated Breathing Circle */
+.circle {
+  width: 100px;
+  height: 100px;
+  background-color: #90caf9;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  animation: breathe 4s ease-in-out infinite;
+}
 
-    .text {
-      position: absolute;
-      font-size: 20px;
-      color: #00796b;
-      font-weight: bold;
-    }
+.breathing-text {
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  transition: opacity 0.5s ease-in-out;
+}
 
-    .inhale {
-      top: -40px; /* Position text above the circle */
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .exhale {
-      bottom: -40px; /* Position text below the circle */
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-
-    @keyframes inhaleExhale {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.5); 
-      }
-      100% {
-        transform: scale(1); 
-      }
-    }
+/* Breathing Animation */
+@keyframes breathe {
+  0%, 100% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(2);
+  }
+}
