@@ -46,9 +46,23 @@
         // When time runs out, stop the timer and update the display
         if (time < 0) {
           clearInterval(timerInterval);
-          countdownEl.innerHTML = "Time's up!";
+          animateEggAfterTimeUp();
           startButton.disabled = false; // Re-enable the start button for a new timer
         }
+      }
+
+      function animateEggAfterTimeUp() {
+        let eggCount = 4; 
+        const intervalTime = 500; 
+      
+        const animationInterval = setInterval(() => {
+          if (eggCount <= 6) {
+            eggImage.src = `eggs/eggs${eggCount}.png`;
+            eggCount++;
+          } else {
+            clearInterval(animationInterval); 
+          }
+        }, intervalTime);
       }
 
     // Add event listener to start button
