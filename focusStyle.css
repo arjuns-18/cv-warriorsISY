@@ -2,7 +2,7 @@ nav {
     position: absolute;
     bottom: 20px;
     width: 100%;
-    text-align: center;
+    left: 27%;
 }
 
 nav ul {
@@ -19,19 +19,16 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    padding: 30px 30px 10px;
-    background: white;
-    color: white;
-    text-transform: uppercase;
+    padding: 35px 30px 5px; 
+    background: white;  
 }
 
 
-#eggIcon{
-    position: absolute; 
-    bottom: 50px; 
-    left: 50%;
-    transform: translateX(-50%);    
-        
+#egg{
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
 }
 
 
@@ -52,7 +49,7 @@ body{
     color: white;
     text-transform: uppercase;
     position: absolute;
-    top: 50%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
