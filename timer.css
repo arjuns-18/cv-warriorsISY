@@ -29,3 +29,19 @@ body{
     overflow: hidden;
 }
 
+#egg[src*="eggs4"]{
+    height:170px;
+    width:150px;
+}
+
+#egg[src*="eggs5"]{
+    height:150px;
+    width:190px;
+}
+
+#egg[src*="eggs6"]{
+    height:100px;
+    width:280px;
+}
+
+
