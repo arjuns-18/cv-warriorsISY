@@ -3,9 +3,8 @@ let time;
 let originalTime;
 let eggCrack = new Audio("sounds/eggcrack.mp3");
 let isTimerActive = false;  
-// let lofi1 = new Audio("");
-// let 
-// let eggCrackSoundPlayed = false;
+let lofi1 = new Audio("sounds/lofi1.mp3");
+let lofi2 = new Audio("sounds/lofi2.mp3");
 
 const countdownEl = document.getElementById('countdown');
 const startButton = document.getElementById('startButton');
