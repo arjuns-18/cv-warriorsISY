@@ -20,6 +20,34 @@
       animation: inhaleExhale 4s ease-in-out infinite;
     }
 
+
+    .container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .text {
+      position: absolute;
+      font-size: 20px;
+      color: #00796b;
+      font-weight: bold;
+    }
+
+    .inhale {
+      top: -40px; /* Position text above the circle */
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .exhale {
+      bottom: -40px; /* Position text below the circle */
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+
     @keyframes inhaleExhale {
       0% {
         transform: scale(1);
