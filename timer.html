@@ -7,8 +7,9 @@
         <title>Fauna</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="focusStyle.css">
+        <link rel="stylesheet" href="timer.css">
     </head>
+
     <body>
         <header>
             <nav>
@@ -24,8 +25,8 @@
 
         <main>
             <p>
-                <label for="timeInput">Enter time in seconds:</label>
-                <input type="number" id="timeInput" placeholder="e.g., 300">
+                <label id = "timerInput" for="timeInput">Enter time in seconds:</label>
+                <p id = "countdown">10:00</p>
               </p>
               <p>
                 <button id="startButton">Start Timer</button>
@@ -36,6 +37,6 @@
                 <img id="egg" src="eggs/egg1.png" width="10%"/>
             </figure>
         </main>
-        <script src="script.js" async defer></script>
+        <script src="timerScript.js" async defer></script>
     </body>
 </html>
