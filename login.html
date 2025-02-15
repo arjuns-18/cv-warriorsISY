@@ -1,26 +1,28 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Log In</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="login.css">
-    </head>
-    <body>
-        <header>
-           
-        </header>
-
-        <main>
-            
-          
-        </main>
-        <script src="script.js" async defer></script>
-    </body>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Log In</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome</h1>
+    </header>
+    
+    <main>
+        <div class="login-container">
+            <p>Username</p>
+            <input type="text" placeholder="Enter Username" id="username">
+            <p>Password</p>
+            <input type="password" placeholder="Enter Password" id="password">
+            <button type="submit" id="login">Log In</button>
+            <p id="error-message"></p>
+        </div>
+    </main>
+    
+    <script src="script.js" async defer></script>
+</body>
 </html>
