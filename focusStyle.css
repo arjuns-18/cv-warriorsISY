@@ -47,8 +47,8 @@ body{
     padding: 10px 20px;
     background: orange;
     color: white;
-    text-transform: uppercase;
     position: absolute;
+    font-weight: bolder;
     top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
