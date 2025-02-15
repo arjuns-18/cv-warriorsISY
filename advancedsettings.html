@@ -10,13 +10,97 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="settings.css">
+        <link rel="stylesheet" href="advancedsettings.css">
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+        <div class="advanced-settings">
+            <h2>Advanced Settings</h2>
+            
+            <!-- Study Preferences -->
+            <div class="settings-group">
+                <h3>Study Preferences</h3>
+                <div class="setting-item">
+                    <label>Study Session Length</label>
+                    <select id="session-length">
+                        <option value="25">25 minutes</option>
+                        <option value="30">30 minutes</option>
+                        <option value="45">45 minutes</option>
+                        <option value="60">60 minutes</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                </div>
+                
+                <div class="setting-item">
+                    <label>Break Duration</label>
+                    <select id="break-duration">
+                        <option value="5">5 minutes</option>
+                        <option value="10">10 minutes</option>
+                        <option value="15">15 minutes</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                </div>
+        
+                <div class="setting-item">
+                    <label>Daily Study Goal</label>
+                    <input type="number" id="daily-goal" min="1" max="24" value="2"> hours
+                </div>
+            </div>
+        
+            <!-- Notification Settings -->
+            <div class="settings-group">
+                <h3>Notifications</h3>
+                <div class="setting-item toggle">
+                    <label>Study Reminders</label>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                    </label>
+                </div>
+        
+                <div class="setting-item toggle">
+                    <label>Break Reminders</label>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                    </label>
+                </div>
+        
+                <div class="setting-item toggle">
+                    <label>Achievement Alerts</label>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+        
+            <!-- Theme Settings -->
+            <div class="settings-group">
+                <h3>Appearance</h3>
+                <div class="setting-item">
+                    <label>Theme</label>
+                    <select id="theme-select">
+                        <option value="ocean">Ocean</option>
+                        <option value="forest">Forest</option>
+                        <option value="space">Space</option>
+                        <option value="minimal">Minimal</option>
+                    </select>
+                </div>
+        
+            <!-- Data Management -->
+            <div class="settings-group">
+                <h3>Data Management</h3>
+                <div class="setting-item">
+                    <label>Export Study Data</label>
+                    <button class="export-btn">Export as CSV</button>
+                </div>
+        
+                <div class="setting-item">
+                    <label>Clear Statistics</label>
+                    <button class="danger-btn">Reset Data</button>
+                </div>
+            </div>
+        </div>
         
         <script src="advancedsettings.js" async defer></script>
     </body>
 </html>
+
