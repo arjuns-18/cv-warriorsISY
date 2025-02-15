@@ -1,9 +1,17 @@
-// Import the Firebase SDKs
+/****************************************************
+ * 1) IMPORT FIREBASE & FIRESTORE
+ ****************************************************/
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+import {
+  getFirestore,set,get,update,remove,ref,ollection,addDoc,getDocs,query,where,
+  getDatabase
+} from "firebase/database";
 
-// Your Firebase configuration
+/****************************************************
+ * 2) FIREBASE CONFIG
+ ****************************************************/
 const firebaseConfig = {
   apiKey: "AIzaSyC2hrB_4KJIhbNf6CS2UCAn7KR_Mljl3_8",
   authDomain: "fauna-app-40916.firebaseapp.com",
@@ -14,10 +22,37 @@ const firebaseConfig = {
   measurementId: "G-HE21MMSYJK"
 };
 
-// Initialize Firebase
+/****************************************************
+ * 3) INITIALIZE FIREBASE
+ ****************************************************/
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const db = getFirestore(app);
+const db = getDatabase();
 
-// Export the initialized Firebase services
-export { app, auth, db };
+
+var usernameInput = document.querySelector("#usertb");
+var emailInput = document.querySelector("#emailtb");
+var passwordInput = document.querySelector("#passtb");
+var login = document.querySelector("#login");
+var signup = document.querySelector("#signup")
+
+function login() {
+    set(ref(db, "Logininfo/" + usernameInput.value), {
+      Email: emailInput.value,
+      Username: usernameInput.value,
+      Password: passwordInput.value,
+    })
+    .then (()=>{
+        alert("Data Stored")
+    })
+  //   .catch (error()=> {      
+  //     alert()
+  // } )
+}
+
+function signup() {
+
+}
+
+login.addEventListener('click', login);
+signup.addEventListener('click', signup);
