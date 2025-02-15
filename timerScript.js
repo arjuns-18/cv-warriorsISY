@@ -1,7 +1,11 @@
 let timerInterval;
 let time;
 let originalTime;
-
+let eggCrack = new Audio("sounds/eggcrack.mp3");
+let isTimerActive = false;  
+// let lofi1 = new Audio("");
+// let 
+// let eggCrackSoundPlayed = false;
 
 const countdownEl = document.getElementById('countdown');
 const startButton = document.getElementById('startButton');
@@ -23,6 +27,7 @@ function startCountdown() {
   timerInterval = setInterval(updateCountdown, 1000);  // Start the countdown
 
   startButton.disabled = true;
+  isTimerActive = true; 
 }
 
 function updateCountdown() {
@@ -34,8 +39,16 @@ function updateCountdown() {
 
   if (time <= originalTime / 4) {
     eggImage.src = "eggs/egg3.png";
+    if (!eggCrackSoundPlayed) {
+      eggCrack.play();
+      eggCrackSoundPlayed = true;
+    }
   } else if (time <= originalTime / 2) {
     eggImage.src = "eggs/egg2.png";
+    if (!eggCrackSoundPlayed) {
+      eggCrack.play();
+      eggCrackSoundPlayed = true;
+    }
   } else {
     eggImage.src = "eggs/egg1.png";
   }
@@ -46,6 +59,8 @@ function updateCountdown() {
     clearInterval(timerInterval);
     animateEggAfterTimeUp();
     startButton.disabled = false;
+    eggCrackSoundPlayed = false;
+    isTimerActive = false;
   }
 }
 
@@ -65,14 +80,52 @@ function animateEggAfterTimeUp() {
 
 function stopTimerAndBreakEgg() {
   clearInterval(timerInterval);
-  eggImage.src = "eggs/brokenEgg.png";
+  eggImage.src = "eggs/eggs7.png";
+  eggCrackSoundPlayed = false;
   startButton.disabled = false;
+  isTimerActive = false;
 }
 
 document.addEventListener('visibilitychange', function () {
-  if (document.hidden) {
+  if (document.hidden && isTimerActive) {
     stopTimerAndBreakEgg();
   }
 });
 
+
 startButton.addEventListener('click', startCountdown);
+
+// =======
+// document.addEventListener("DOMContentLoaded", function () {
+//   console.log("JavaScript Loaded"); // Debugging log
+
+//   const openMindfulnessBtn = document.getElementById("openMindfulness");
+//   const mindfulnessModal = document.getElementById("mindfulnessModal");
+//   const closeModal = document.querySelector(".close");
+
+//   if (!openMindfulnessBtn || !mindfulnessModal || !closeModal) {
+//       console.error("Modal elements not found! Check HTML structure.");
+//       return;
+//   }
+
+//   // Show modal when button is clicked
+//   openMindfulnessBtn.addEventListener("click", function () {
+//       console.log("Opening Modal"); // Debugging log
+//       mindfulnessModal.classList.add("show");
+//   });
+
+//   // Hide modal when close button is clicked
+//   closeModal.addEventListener("click", function () {
+//       console.log("Closing Modal"); // Debugging log
+//       mindfulnessModal.classList.remove("show");
+//   });
+
+//   // Hide modal if user clicks outside the modal content
+//   window.addEventListener("click", function (event) {
+//       if (event.target === mindfulnessModal) {
+//           console.log("Clicked Outside Modal"); // Debugging log
+//           mindfulnessModal.classList.remove("show");
+//       }
+//   });
+// });
+// >>>>>>> Stashed changes
