@@ -54,6 +54,7 @@ function loginbtnClicked() {
         errorLogin.textContent = "Incorrect username or password";
     }
 }
+const username = document.querySelector("#username")
+const hoursstudied = document.querySelector("#hoursstudied")
 
-var savedUsername = "";
-var savedPassword = "";
+username.textContent = savedUsername;
