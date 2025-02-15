@@ -6,7 +6,9 @@ let isTimerActive = false;
 let eggCrackSoundPlayed = false;
 let lofi1 = new Audio("sounds/lofi1.mp3");
 let lofi2 = new Audio("sounds/lofi2.mp3");
-let index = 1; 
+let fishAnimationInterval;
+let index = 1;
+
 
 const countdownEl = document.getElementById('countdown');
 const startButton = document.getElementById('startButton');
@@ -82,11 +84,15 @@ function animateEggAfterTimeUp() {
   }, intervalTime);
 }
 
-function animateFishAfterTimeUp(){
+function animateFishAfterTimeUp() {
+  if (fishAnimationInterval) {
+    clearInterval(fishAnimationInterval);
+  }
+  index = 1;
   let randomNumber = Math.floor(Math.random() * 4) + 1;
   const fishInterval = 150; 
-  if (randomNumber === 1){
-    setInterval(() => {
+  if (randomNumber === 1) {
+    fishAnimationInterval = setInterval(() => {
       if (!isTimerActive) {
         animalImage.src = `fishanimation/anglerfish/angler${index}.png`;
         index++;
@@ -95,9 +101,8 @@ function animateFishAfterTimeUp(){
         }
       }
     }, fishInterval);
-  }
-  else if(randomNumber === 2){
-    setInterval(() => {
+  } else if (randomNumber === 2) {
+    fishAnimationInterval = setInterval(() => {
       if (!isTimerActive) {
         animalImage.src = `fishanimation/eel/eel${index}.png`;
         index++;
@@ -106,9 +111,8 @@ function animateFishAfterTimeUp(){
         }
       }
     }, fishInterval);
-  }
-  else if(randomNumber === 3){
-    setInterval(() => {
+  } else if (randomNumber === 3) {
+    fishAnimationInterval = setInterval(() => {
       if (!isTimerActive) {
         animalImage.src = `fishanimation/octopus/octopus${index}.png`;
         index++;
@@ -117,9 +121,8 @@ function animateFishAfterTimeUp(){
         }
       }
     }, fishInterval);
-  }
-  else if(randomNumber === 4){
-    setInterval(() => {
+  } else if (randomNumber === 4) {
+    fishAnimationInterval = setInterval(() => {
       if (!isTimerActive) {
         animalImage.src = `fishanimation/turtle/${index}.png`;
         index++;
