@@ -1,7 +1,7 @@
 let timerInterval;
 let time;
 let originalTime;
-
+let eggCrack = Audio("sounds/eggcrack.mp3");
 
 const countdownEl = document.getElementById('countdown');
 const startButton = document.getElementById('startButton');
@@ -76,3 +76,4 @@ document.addEventListener('visibilitychange', function () {
 });
 
 startButton.addEventListener('click', startCountdown);
+
