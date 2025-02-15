@@ -1,61 +1,85 @@
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #e0f7fa;
-    }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #e0f7fa;
+}
 
-    .circle {
-      width: 150px;
-      height: 150px;
-      background-color: #00796b;
-      border-radius: 50%;
-      animation: inhaleExhale 4s ease-in-out infinite;
-    }
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.circle {
+  width: 150px;
+  height: 150px;
+  background-color: #00796b;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation: inhaleExhale 4s ease-in-out infinite;
+}
 
-    .container {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+.text {
+  position: absolute;
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: bold;
+  opacity: 0; /* Initially hidden */
+}
 
-    .text {
-      position: absolute;
-      font-size: 20px;
-      color: #00796b;
-      font-weight: bold;
-    }
+.inhale {
+  animation: textAnimationInhale 4s ease-in-out infinite;
+}
 
-    .inhale {
-      top: -40px; /* Position text above the circle */
-      left: 50%;
-      transform: translateX(-50%);
-    }
+.exhale {
+  animation: textAnimationExhale 4s ease-in-out infinite;
+  animation-delay: 2s; /* Delay the exhale text */
+}
 
-    .exhale {
-      bottom: -40px; /* Position text below the circle */
-      left: 50%;
-      transform: translateX(-50%);
-    }
+@keyframes inhaleExhale {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.25);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  75% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
+@keyframes textAnimationInhale {
+  0%, 25%, 75%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1; /* "Inhale" appears when the circle reaches max size */
+  }
+}
 
-    @keyframes inhaleExhale {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.5); 
-      }
-      100% {
-        transform: scale(1); 
-      }
-    }
+@keyframes textAnimationExhale {
+  0%, 50%, 25%, 100% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1; /* "Exhale" appears when the circle is shrinking */
+  }
+}
