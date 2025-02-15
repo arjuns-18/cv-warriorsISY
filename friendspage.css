@@ -1,0 +1,73 @@
+/* friendspage.css */
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Overall page styling */
+  body {
+    background-color: #282C34; /* Dark background like a code editor */
+    color: #ABB2BF;            /* Soft, light gray text */
+    font-family: 'Consolas', 'Courier New', monospace; /* Monospaced for that coding feel */
+    padding: 20px;
+  }
+  
+  /* Headings with a pop of color */
+  h1, h2 {
+    color: #61DAFB; /* Bright accent blue */
+    margin-bottom: 20px;
+  }
+  
+  /* Styling the button to look sharp */
+  button {
+    background-color: #61DAFB;
+    color: #282C34;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: inherit;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+  }
+  
+  button:hover {
+    background-color: #4db8e4;
+  }
+  
+  /* Paragraph styling for code display */
+  p {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  /* Optional: Style for code-like elements */
+  code {
+    background-color: #3B4048;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Courier New', monospace;
+  }
+  
+  /* Specific styling for the friend code display */
+  #friendCode {
+    border: 1px solid #ABB2BF;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #3B4048;
+    width: fit-content;
+  }
+  
+  /* Style for outdated browser warning */
+  .browsehappy {
+    background: #ff5555;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
