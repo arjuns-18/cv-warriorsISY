@@ -7,7 +7,22 @@ const error = document.querySelector("#error-message");
 const loginUsername = document.querySelector("#loginusername");
 const loginPassword = document.querySelector("#loginpassword");
 const errorLogin = document.querySelector("#error-message2");
+// Settings page elements
+const usernameSettings = document.querySelector("#username-settings");
+const passwordSettings = document.querySelector("#password-settings");
 
+// Function to display settings
+function displaySettings() {
+    if (usernameSettings && passwordSettings) {
+        const savedUsername = localStorage.getItem('savedUsername');
+        const savedPassword = localStorage.getItem('savedPassword');
+        
+        if (savedUsername && savedPassword) {
+            usernameSettings.textContent = savedUsername;
+            passwordSettings.textContent = savedPassword;
+        }
+    }
+}
 function signupbtnClicked() {
     // Basic validation
     if (signinUsername.value === '' || signupPassword.value === '') {
@@ -40,5 +55,3 @@ function loginbtnClicked() {
     }
 }
 
-var savedUsername = "";
-var savedPassword = "";
