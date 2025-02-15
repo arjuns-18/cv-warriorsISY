@@ -9,7 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #e0f7fa;
+  background-color: #ffffff;
 }
 
 .container {
@@ -19,57 +19,41 @@ body {
   align-items: center;
 }
 
+/* Static Background Circle */
+.background-circle {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-color: rgba(144, 202, 249, 0.2);
+  border-radius: 50%;
+}
+
+/* Animated Breathing Circle */
 .circle {
-  width: 150px;
-  height: 150px;
-  background-color: #00796b;
+  width: 100px;
+  height: 100px;
+  background-color: #90caf9;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  animation: inhaleExhale 4s ease-in-out infinite;
-}
-
-.text {
   position: absolute;
+  animation: breathe 4s ease-in-out infinite;
+}
+
+.breathing-text {
   font-size: 20px;
-  color: #ffffff;
+  color: white;
   font-weight: bold;
-  opacity: 0; /* Initially hidden */
+  transition: opacity 0.5s ease-in-out;
 }
 
-.inhale {
-  animation: textAnimationInhale 4s ease-in-out infinite;
-}
-
-.exhale {
-  animation: textAnimationExhale 4s ease-in-out infinite;
-}
-
-@keyframes inhaleExhale {
+/* Breathing Animation */
+@keyframes breathe {
   0%, 100% {
-    transform: scale(1); /* Circle at original size */
+      transform: scale(1);
   }
   50% {
-    transform: scale(1.5); /* Circle at max size */
-  }
-}
-
-@keyframes textAnimationInhale {
-  0%, 50%, 100% {
-    opacity: 0; 
-  }
-  25% {
-    opacity: 1; /* "Inhale" text visible when the circle is expanding */
-  }
-}
-
-@keyframes textAnimationExhale {
-  0%, 25%, 100% {
-    opacity: 0; /* "Exhale" text hidden at the start, during expansion, and end */
-  }
-  75% {
-    opacity: 1; /* "Exhale" text visible when the circle is shrinking */
+      transform: scale(2);
   }
 }
