@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Log In</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="signup.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Sign Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="signup.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to Fauna</h1>
-    </header>
-    
-    <main>
-        <div class="login-container">
-            <p>Username</p>
-            <input type="text" placeholder="Enter Username" id="signinusername">
-            <p>Password</p>
-            <input type="password" placeholder="Enter Password" id="signuppassword">
-            <button onclick="signupbtnClicked()" id="signup">Sign Up</button>
-            <p id="error-message">123</p>
-            <p>Already Have an Account? <a href="login.html">Log In</a></p>
-        </div>
-    </main>
-    
-    <script src="script.js" async defer></script>
+  <header>
+    <h1>Welcome to Fauna</h1>
+  </header>
+  
+  <main>
+    <div class="login-container">
+      <p>Username</p>
+      <input type="text" placeholder="Enter Username" id="signinusername">
+      <p>Password</p>
+      <input type="password" placeholder="Enter Password" id="signuppassword">
+      <button onclick="signupbtnClicked()" id="signup">Sign Up</button>
+      <p id="error-message"></p>
+      <p>Already Have an Account? <a href="login.html">Log In</a></p>
+    </div>
+  </main>
+
+  <!-- Use accountdb.js as a module -->
+  <script type="module" src="accountdb.js"></script>
 </body>
 </html>
