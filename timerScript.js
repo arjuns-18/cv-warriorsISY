@@ -11,6 +11,8 @@ let playedHalf = false;
 let playedQuarter = false;
 let playedZero = false;
 
+let animalsUnlocked = [];
+
 const countdownEl = document.getElementById('countdown');
 const musicButton = document.getElementById('musicButton');
 const minuteInput = document.getElementById('minuteInput');
