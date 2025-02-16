@@ -98,7 +98,7 @@ select, input[type="number"] {
     border-radius: 8px;
     font-size: 0.9rem;
     color: #333;
-    background: rgba(33, 10, 10, 0.8);
+    background: rgba(255, 255, 255, 0.8);
     min-width: 150px;
     cursor: pointer;
 }
@@ -172,7 +172,7 @@ input:checked + .slider:before {
     padding: 8px 16px;
     border: none;
     border-radius: 8px;
-    background: rgba(255, 59, 48, 0.8);
+    background: rgba(255, 0, 0, 0.8);
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -227,7 +227,7 @@ input:checked + .slider:before {
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.1);
 }
 
 ::-webkit-scrollbar-thumb {
