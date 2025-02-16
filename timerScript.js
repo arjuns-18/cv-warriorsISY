@@ -121,6 +121,8 @@ function animateFishAfterTimeUp() {
       }
     }, fishInterval);
     resultText.textContent = "You hatched an anglerfish"; 
+    anglerfishEggs = anglerfishEggs + 1;
+    console.log(anglerfishEggs)
   } else if (randomNumber === 2) {
     fishAnimationInterval = setInterval(() => {
       if (!animalsUnlocked.includes("eel")) {
@@ -153,6 +155,8 @@ function animateFishAfterTimeUp() {
       }
     }, fishInterval);
     resultText.textContent = "You hatched an octopus"; 
+    octopusEggs = octopusEggs + 1;
+    console.log(octopusEggs)
   } else if (randomNumber === 4) {
     fishAnimationInterval = setInterval(() => {
       if (!animalsUnlocked.includes("turtle")) {
@@ -168,6 +172,8 @@ function animateFishAfterTimeUp() {
       }
     }, fishInterval);
     resultText.textContent = "You hatched a turtle"; 
+    turtleEggs = turtleEggs + 1;
+    console.log(turtleEggs)
   }
 }
 
