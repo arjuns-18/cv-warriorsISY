@@ -15,11 +15,11 @@
     <header>
         <nav>
             <ul>
-                <!-- <li><a href="friends.html"><img id="friendIcon" src="icons/friends icon.png" width="3%" /></a></li>
-                    <li><a href="mindfulness.html"><img id="friendIcon" src="icons/mindfulness.png" width="3%" /></a></li>
-                    <li><a href="index.html"><img id="friendIcon" src="icons/start focus.png" width="3%" /></a></li>
-                    <li><a href="settings.html"><img id="friendIcon" src="icons/settings.png" width="3%" /></a></li>
-                    <li><a href="stats.html"><img id="friendIcon" src="icons/stats.png" width="3%" /></a></li> -->
+                <li><a href="friends.html"><img id="friendIcon" src="icons/friends icon.png" width="3%" /></a></li>
+                <li><a href="mindfulness.html"><img id="friendIcon" src="icons/mindfulness.png" width="3%" /></a></li>
+                <li><a href="index.html"><img id="friendIcon" src="icons/start focus.png" width="3%" /></a></li>
+                <li><a href="settings.html"><img id="friendIcon" src="icons/settings.png" width="3%" /></a></li>
+                    <li><a href="stats.html"><img id="friendIcon" src="icons/stats.png" width="3%" /></a></li>
             </ul>
         </nav>
     </header>
@@ -28,22 +28,28 @@
         <p>
             <!-- <label id = "timerInput" for="timeInput">Enter time in seconds:</label> -->
             <label id="enterNumber" for="minuteInput">Enter time in minutes:</label color: white>
-            <input type="number" id="minuteInput" placeholder="e.g., 10" min="1">
+            <input type="number" id="minuteInput" placeholder="e.g., 10" min="1" max="180">
         </p>
         <p>
             <button id="startButton">Start Timer</button>
+            <button id = "musicButton">Play Music</button>
+            <button id = "switchButton">Switch music</button>
+            
         </p>
 
         <p id="countdown"></p>
 
         <figure>
             <img id="egg" src="eggs/egg1.png" />
+            <img id = "animal" src =""/> 
         </figure>
 
         <p id = "resultText"></p>
     </main>
     <script src="timerScript.js" async defer></script>
-
 </body>
 
+
+
 </html>
+
