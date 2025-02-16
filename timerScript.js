@@ -222,3 +222,70 @@ switchButton.addEventListener('click', () => {
 });
 
 startButton.addEventListener('click', startCountdown);
+
+// Add this to your existing timerScript.js
+
+const modal = document.getElementById('mindfulnessModal');
+const closeBtn = document.getElementById('closeModal');
+const mindfulnessBtn = document.getElementById('mindfulnessButton');
+let intervalId = null;
+
+// Make sure modal is hidden initially
+modal.style.display = 'none';
+
+// Breathing text elements
+const breathingText = document.querySelector('.breathing-text');
+let isInhaling = true;
+
+// Breathing text update function
+function updateBreathingText() {
+    if (isInhaling) {
+        breathingText.textContent = 'inhale';
+    } else {
+        breathingText.textContent = 'exhale';
+    }
+    isInhaling = !isInhaling;
+}
+
+// Function to show mindfulness modal
+function showMindfulnessModal() {
+    modal.style.display = 'flex';
+    
+    // Reset to inhale state
+    isInhaling = true;
+    breathingText.textContent = 'inhale';
+    
+    // Clear any existing interval
+    if (intervalId) {
+        clearInterval(intervalId);
+    }
+    
+    // Start new interval, but wait 2 seconds before first change to exhale
+    intervalId = setInterval(() => {
+        isInhaling = !isInhaling;
+        breathingText.textContent = isInhaling ? 'inhale' : 'exhale';
+    }, 2000);
+}
+
+// Add click event to mindfulness button
+mindfulnessBtn.addEventListener('click', showMindfulnessModal);
+
+// Close modal
+closeBtn.onclick = function() {
+    modal.style.display = 'none';
+    // Clear interval when modal closes
+    if (intervalId) {
+        clearInterval(intervalId);
+    }
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+        // Clear interval when modal closes
+        if (intervalId) {
+            clearInterval(intervalId);
+        }
+    }
+}
