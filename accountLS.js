@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!userG || !passG) return; // just in case
 
         if (!userG.value.trim() || !passG.value.trim()) {
-            errorG.textContent = "error: fill in all fields.";
+            errorG.textContent = "Please fill in all the fields.";
             errorG.style.color = "red";
             return;
         }
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         users.push(newUser);
         localStorage.setItem("users", JSON.stringify(users));
 
-        errorG.textContent = "account successfully created!";
+        errorG.textContent = "Account Created Successfully";
         errorG.style.color = "green";
 
         // send them to index.html after signing up
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!userL || !passL) return; // just in case
 
         if (!userL.value.trim() || !passL.value.trim()) {
-            errorL.textContent = "error: fill in all fields.";
+            errorL.textContent = "Please fill in all fields.";
             errorL.style.color = "red";
             return;
         }
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let foundUser = users.find(user => user.username === userL.value.trim() && user.password === passL.value.trim());
 
         if (foundUser) {
-            errorL.textContent = "login successful!";
+            errorL.textContent = "Login Successful!";
             errorL.style.color = "green";
 
             // send them to index.html after logging in
@@ -72,8 +72,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 window.location.href = "index.html";
             }, 1000);
         } else {
-            errorL.textContent = "incorrect username or password.";
+            errorL.textContent = "Incorrect Username or Password.";
             errorL.style.color = "red";
+            passL.textContent = "";
         }
     }
 
