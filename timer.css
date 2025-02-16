@@ -251,3 +251,26 @@ nav ul li a:hover img {
 .timer-active #egg {
     animation: float 2s ease-in-out infinite;
 }
+
+#resultText {
+    color: #ffffff;  /* Bright red color */
+    font-size: 24px;
+    font-weight: bold;
+    flex:50%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    
+    position: fixed;
+    top: 70%;
+    left: 41%;
+    padding: 20px;
+    margin: 0;
+    animation: shake 0.5s ease-in-out;
+    white-space: nowrap;
+    
+}
+
+@keyframes shake {
+    0%, 100% { transform: translate(-50%, -50%); }
+    25% { transform: translate(calc(-50% - 10px), -50%); }
+    75% { transform: translate(calc(-50% + 10px), -50%); }
+}
