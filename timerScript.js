@@ -2,6 +2,7 @@ let timerInterval;
 let time;
 let originalTime;
 let eggCrack = new Audio("sounds/eggcrack.mp3");
+let eggBreak = new Audio("sounds/eggbreak.mp3");
 let isTimerActive = false;  
 let fishAnimationInterval;
 let index = 1;
@@ -107,7 +108,6 @@ function animateFishAfterTimeUp() {
   if (randomNumber === 1) {
     fishAnimationInterval = setInterval(() => {
 
-      //dont mess with this - arjun
       if (!animalsUnlocked.includes("anglerfish")) { 
         animalsUnlocked.push("anglerfish");
         localStorage.setItem("animalsUnlocked", JSON.stringify(animalsUnlocked));
@@ -186,6 +186,7 @@ function stopTimerAndBreakEgg() {
 document.addEventListener('visibilitychange', function () {
   if (document.hidden && isTimerActive) {
     stopTimerAndBreakEgg();
+    eggBreak.play();
   }
 });
 
