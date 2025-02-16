@@ -16,6 +16,7 @@ const musicButton = document.getElementById('musicButton');
 const minuteInput = document.getElementById('minuteInput');
 const eggImage = document.getElementById('egg');
 const animalImage = document.getElementById('animal');
+const resultText = document.getElementById('resultText');
 
 function startCountdown() {
   const inputMinutes = parseInt(minuteInput.value, 10);
@@ -33,6 +34,7 @@ function startCountdown() {
   startButton.disabled = true;
   isTimerActive = true;
   animalImage.src = "";
+  resultText.textContent = ""; 
 }
 
 function updateCountdown() {
@@ -99,6 +101,7 @@ function animateFishAfterTimeUp() {
         }
       }
     }, fishInterval);
+    resultText.textContent = "You hatched an anglerfish"; 
   } else if (randomNumber === 2) {
     fishAnimationInterval = setInterval(() => {
       if (!isTimerActive) {
@@ -109,6 +112,7 @@ function animateFishAfterTimeUp() {
         }
       }
     }, fishInterval);
+    resultText.textContent = "You hatched an eel"; 
   } else if (randomNumber === 3) {
     fishAnimationInterval = setInterval(() => {
       if (!isTimerActive) {
@@ -119,6 +123,7 @@ function animateFishAfterTimeUp() {
         }
       }
     }, fishInterval);
+    resultText.textContent = "You hatched a octopus"; 
   } else if (randomNumber === 4) {
     fishAnimationInterval = setInterval(() => {
       if (!isTimerActive) {
@@ -129,6 +134,7 @@ function animateFishAfterTimeUp() {
         }
       }
     }, fishInterval);
+    resultText.textContent = "You hatched a turtle"; 
   }
 }
 
@@ -138,6 +144,7 @@ function stopTimerAndBreakEgg() {
   animalImage.src = "";
   startButton.disabled = false;
   isTimerActive = false;
+  resultText.textContent = "You killed your egg"; 
 }
 
 document.addEventListener('visibilitychange', function () {
