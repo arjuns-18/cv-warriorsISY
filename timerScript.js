@@ -103,14 +103,11 @@ function animateFishAfterTimeUp() {
   if (randomNumber === 1) {
     fishAnimationInterval = setInterval(() => {
 
+      //dont mess with this - arjun
       if (!animalsUnlocked.includes("anglerfish")) { 
-        animalsUnlocked.push("anglerfish"); // Add anglerfish if not already unlocked
-
-        // Save the updated array to local storage
+        animalsUnlocked.push("anglerfish");
         localStorage.setItem("animalsUnlocked", JSON.stringify(animalsUnlocked));
-    }
-
-
+      }
       if (!isTimerActive) {
         animalImage.src = `fishanimation/anglerfish/angler${index}.png`;
         index++;
@@ -120,16 +117,12 @@ function animateFishAfterTimeUp() {
       }
     }, fishInterval);
     resultText.textContent = "You hatched an anglerfish"; 
-  } 
-  
-  else if (randomNumber === 2) {
+  } else if (randomNumber === 2) {
     fishAnimationInterval = setInterval(() => {
-
-      if (!animalsUnlocked.includes(animalName)) {
-        animalsUnlocked.push(animalName);
+      if (!animalsUnlocked.includes("eel")) {
+        animalsUnlocked.push("eel");
         localStorage.setItem("animalsUnlocked", JSON.stringify(animalsUnlocked));
-    }
-
+      }
       if (!isTimerActive) {
         animalImage.src = `fishanimation/eel/eel${index}.png`;
         index++;
@@ -139,16 +132,12 @@ function animateFishAfterTimeUp() {
       }
     }, fishInterval);
     resultText.textContent = "You hatched an eel"; 
-  } 
-  
-  else if (randomNumber === 3) {
+  } else if (randomNumber === 3) {
     fishAnimationInterval = setInterval(() => {
-
-      if (!animalsUnlocked.includes(animalName)) {
-        animalsUnlocked.push(animalName);
+      if (!animalsUnlocked.includes("octopus")) {
+        animalsUnlocked.push("octopus");
         localStorage.setItem("animalsUnlocked", JSON.stringify(animalsUnlocked));
-    }
-
+      }
       if (!isTimerActive) {
         animalImage.src = `fishanimation/octopus/octopus${index}.png`;
         index++;
@@ -157,17 +146,13 @@ function animateFishAfterTimeUp() {
         }
       }
     }, fishInterval);
-    resultText.textContent = "You hatched a octopus"; 
-  } 
-  
-  else if (randomNumber === 4) {
+    resultText.textContent = "You hatched an octopus"; 
+  } else if (randomNumber === 4) {
     fishAnimationInterval = setInterval(() => {
-
-      if (!animalsUnlocked.includes(animalName)) {
-        animalsUnlocked.push(animalName);
+      if (!animalsUnlocked.includes("turtle")) {
+        animalsUnlocked.push("turtle");
         localStorage.setItem("animalsUnlocked", JSON.stringify(animalsUnlocked));
-    }
-
+      }
       if (!isTimerActive) {
         animalImage.src = `fishanimation/turtle/turtle${index}.png`;
         index++;
@@ -192,11 +177,11 @@ function stopTimerAndBreakEgg() {
   resultText.textContent = "You killed your egg"; 
 }
 
-// document.addEventListener('visibilitychange', function () {
-//   if (document.hidden && isTimerActive) {
-//     stopTimerAndBreakEgg();
-//   }
-// });
+document.addEventListener('visibilitychange', function () {
+  if (document.hidden && isTimerActive) {
+    stopTimerAndBreakEgg();
+  }
+});
 
 musicButton.addEventListener('click', () => {
   if (tracks[currentTrackIndex].paused) {
