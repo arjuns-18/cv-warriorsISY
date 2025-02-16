@@ -92,6 +92,11 @@ main {
     width: 280px;
 }
 
+#egg[src*="eggs7"]{
+    height: 250px;
+    width:250px;
+}
+
 #minuteInput {
     width: 200px;
     height: 50px;
