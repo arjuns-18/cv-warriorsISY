@@ -1,13 +1,21 @@
-const text = document.querySelector(".breathing-text");
+document.addEventListener('DOMContentLoaded', function() {
+    const text = document.querySelector('.breathing-text');
+    let isInhaling = true;
 
-function updateText() {
-    text.textContent = "inhale"; // Immediately start with inhale
+    function updateText() {
+        if (isInhaling) {
+            text.textContent = 'inhale';
+        } else {
+            text.textContent = 'exhale';
+        }
+        isInhaling = !isInhaling; // Toggle between inhale and exhale
+    }
 
-    setTimeout(() => {
-        text.textContent = "exhale"; // Text changes when shrinking
-    }, 2000); // Reduce delay for first cycle
-}
+    // Initial call
+    updateText();
+    
+    // Change text every 4 seconds
+    setInterval(updateText, 2000);
 
-// Start immediately, then repeat every 4 seconds
-updateText();
-setInterval(updateText, 4000);
+    console.log('Breathing exercise started');
+});

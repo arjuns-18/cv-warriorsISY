@@ -28,6 +28,7 @@ body {
   border-radius: 50%;
 }
 
+
 /* Animated Breathing Circle */
 .circle {
   width: 100px;
@@ -56,4 +57,8 @@ body {
   50% {
       transform: scale(2);
   }
+}
+
+#closemodal{
+  cursor: pointer;
 }
