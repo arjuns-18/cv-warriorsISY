@@ -9,6 +9,10 @@ let playedHalf = false;
 let playedQuarter = false;
 let currentTrackIndex = 0;
 let playedZero = false;
+let eelEggs = 0;
+let anglerfishEggs= 0;
+let octopusEggs = 0;
+let turtleEggs=0;
 
 let animalsUnlocked = JSON.parse(localStorage.getItem("animalsUnlocked")) || [];
 
@@ -132,6 +136,8 @@ function animateFishAfterTimeUp() {
       }
     }, fishInterval);
     resultText.textContent = "You hatched an eel"; 
+    eelEggs = eelEggs + 1;
+    console.log(eelEggs);
   } else if (randomNumber === 3) {
     fishAnimationInterval = setInterval(() => {
       if (!animalsUnlocked.includes("octopus")) {
