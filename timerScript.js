@@ -122,7 +122,7 @@ function animateFishAfterTimeUp() {
   } else if (randomNumber === 4) {
     fishAnimationInterval = setInterval(() => {
       if (!isTimerActive) {
-        animalImage.src = `fishanimation/turtle/${index}.png`;
+        animalImage.src = `fishanimation/turtle/turtle${index}.png`;
         index++;
         if (index > 4) {
           index = 1;
