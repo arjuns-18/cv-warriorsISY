@@ -140,6 +140,9 @@ function animateFishAfterTimeUp() {
 
 function stopTimerAndBreakEgg() {
   clearInterval(timerInterval);
+  if (fishAnimationInterval) {
+    clearInterval(fishAnimationInterval);
+  }
   eggImage.src = "eggs/eggs7.png";
   animalImage.src = "";
   startButton.disabled = false;
@@ -164,38 +167,3 @@ musicButton.addEventListener('click', () => {
 });
 
 startButton.addEventListener('click', startCountdown);
-
-// =======
-// document.addEventListener("DOMContentLoaded", function () {
-//   console.log("JavaScript Loaded"); // Debugging log
-
-//   const openMindfulnessBtn = document.getElementById("openMindfulness");
-//   const mindfulnessModal = document.getElementById("mindfulnessModal");
-//   const closeModal = document.querySelector(".close");
-
-//   if (!openMindfulnessBtn || !mindfulnessModal || !closeModal) {
-//       console.error("Modal elements not found! Check HTML structure.");
-//       return;
-//   }
-
-//   // Show modal when button is clicked
-//   openMindfulnessBtn.addEventListener("click", function () {
-//       console.log("Opening Modal"); // Debugging log
-//       mindfulnessModal.classList.add("show");
-//   });
-
-//   // Hide modal when close button is clicked
-//   closeModal.addEventListener("click", function () {
-//       console.log("Closing Modal"); // Debugging log
-//       mindfulnessModal.classList.remove("show");
-//   });
-
-//   // Hide modal if user clicks outside the modal content
-//   window.addEventListener("click", function (event) {
-//       if (event.target === mindfulnessModal) {
-//           console.log("Clicked Outside Modal"); // Debugging log
-//           mindfulnessModal.classList.remove("show");
-//       }
-//   });
-// });
-// >>>>>>> Stashed changes
