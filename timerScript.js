@@ -95,9 +95,13 @@ function animateFishAfterTimeUp() {
     clearInterval(fishAnimationInterval);
   }
   index = 1;
-  let randomNumber = Math.floor(Math.random() * 4) + 1;
+  let randomNumA = Math.floor(Math.random() * 4) + 1;
   const fishInterval = 150; 
-  if (randomNumber === 1) {
+  if (randomNumA === 1) {
+
+      animalsUnlocked.push("randomNumA");
+      console.log(randomNumA);
+
     fishAnimationInterval = setInterval(() => {
       if (!isTimerActive) {
         animalImage.src = `fishanimation/anglerfish/angler${index}.png`;
@@ -108,7 +112,11 @@ function animateFishAfterTimeUp() {
       }
     }, fishInterval);
     resultText.textContent = "You hatched an anglerfish"; 
-  } else if (randomNumber === 2) {
+  } else if (randomNumA === 2) {
+
+      animalsUnlocked.push("randomNumA");
+      console.log(randomNumA);
+
     fishAnimationInterval = setInterval(() => {
       if (!isTimerActive) {
         animalImage.src = `fishanimation/eel/eel${index}.png`;
@@ -119,7 +127,11 @@ function animateFishAfterTimeUp() {
       }
     }, fishInterval);
     resultText.textContent = "You hatched an eel"; 
-  } else if (randomNumber === 3) {
+  } else if (randomNumA === 3) {
+
+      animalsUnlocked.push("randomNumA");
+      console.log(randomNumA);
+
     fishAnimationInterval = setInterval(() => {
       if (!isTimerActive) {
         animalImage.src = `fishanimation/octopus/octopus${index}.png`;
@@ -130,7 +142,11 @@ function animateFishAfterTimeUp() {
       }
     }, fishInterval);
     resultText.textContent = "You hatched a octopus"; 
-  } else if (randomNumber === 4) {
+  } else if (randomNumA === 4) {
+
+      animalsUnlocked.push("randomNumA");
+      console.log(randomNumA);
+
     fishAnimationInterval = setInterval(() => {
       if (!isTimerActive) {
         animalImage.src = `fishanimation/turtle/turtle${index}.png`;
