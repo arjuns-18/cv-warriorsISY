@@ -10,6 +10,8 @@ let playedQuarter = false;
 let currentTrackIndex = 0;
 let playedZero = false;
 
+let animalsUnlocked = JSON.parse(localStorage.getItem("animalsUnlocked")) || [];
+
 const tracks = [
   new Audio("sounds/lofi1.mp3"),
   new Audio("sounds/lofi2.mp3"),
@@ -95,13 +97,9 @@ function animateFishAfterTimeUp() {
     clearInterval(fishAnimationInterval);
   }
   index = 1;
-  let randomNumA = Math.floor(Math.random() * 4) + 1;
+  let randomNumber = Math.floor(Math.random() * 4) + 1;
   const fishInterval = 150; 
-  if (randomNumA === 1) {
-
-      animalsUnlocked.push("randomNumA");
-      console.log(randomNumA);
-
+  if (randomNumber === 1) {
     fishAnimationInterval = setInterval(() => {
       if (!isTimerActive) {
         animalImage.src = `fishanimation/anglerfish/angler${index}.png`;
@@ -112,11 +110,7 @@ function animateFishAfterTimeUp() {
       }
     }, fishInterval);
     resultText.textContent = "You hatched an anglerfish"; 
-  } else if (randomNumA === 2) {
-
-      animalsUnlocked.push("randomNumA");
-      console.log(randomNumA);
-
+  } else if (randomNumber === 2) {
     fishAnimationInterval = setInterval(() => {
       if (!isTimerActive) {
         animalImage.src = `fishanimation/eel/eel${index}.png`;
@@ -127,11 +121,7 @@ function animateFishAfterTimeUp() {
       }
     }, fishInterval);
     resultText.textContent = "You hatched an eel"; 
-  } else if (randomNumA === 3) {
-
-      animalsUnlocked.push("randomNumA");
-      console.log(randomNumA);
-
+  } else if (randomNumber === 3) {
     fishAnimationInterval = setInterval(() => {
       if (!isTimerActive) {
         animalImage.src = `fishanimation/octopus/octopus${index}.png`;
@@ -142,11 +132,7 @@ function animateFishAfterTimeUp() {
       }
     }, fishInterval);
     resultText.textContent = "You hatched a octopus"; 
-  } else if (randomNumA === 4) {
-
-      animalsUnlocked.push("randomNumA");
-      console.log(randomNumA);
-
+  } else if (randomNumber === 4) {
     fishAnimationInterval = setInterval(() => {
       if (!isTimerActive) {
         animalImage.src = `fishanimation/turtle/turtle${index}.png`;
@@ -172,11 +158,11 @@ function stopTimerAndBreakEgg() {
   resultText.textContent = "You killed your egg"; 
 }
 
-document.addEventListener('visibilitychange', function () {
-  if (document.hidden && isTimerActive) {
-    stopTimerAndBreakEgg();
-  }
-});
+// document.addEventListener('visibilitychange', function () {
+//   if (document.hidden && isTimerActive) {
+//     stopTimerAndBreakEgg();
+//   }
+// });
 
 musicButton.addEventListener('click', () => {
   if (tracks[currentTrackIndex].paused) {
