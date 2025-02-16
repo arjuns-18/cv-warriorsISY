@@ -149,3 +149,45 @@ body {
     font-size: 24px;
     cursor: pointer;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+
+h1 {
+    text-align:center;
+    font-size: 4rem;
+    font-family: 'Patua One', cursive;
+    font-weight: 400; 
+    color: #02a7a7; 
+    margin: 2rem 0;
+    padding: 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    -webkit-text-stroke: 2px rgb(255, 255, 255);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+        letter-spacing: 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+    }
+}

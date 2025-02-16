@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Sign Up</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="signup.css">
+  <link rel="stylesheet" href="loginsignup.css">
 </head>
 <body>
   <header>
@@ -13,16 +13,14 @@
   </header>
   
   <main>
-    <div>
-
-          <!--don't t touch this - arjun -->
-          <p>Username</p>
-          <input id="userG" type="text" placeholder="Enter your Username">
-          <p>Password</p>
-          <input id="passG" type="password" placeholder="Enter your Password">
-          <button id="signup"></button>
-          <p id="errorG"></p>
-
+    <div class="login-container">
+      <p>Username</p>
+      <input type="text" placeholder="Enter Username" id="signinusername">
+      <p>Password</p>
+      <input type="password" placeholder="Enter Password" id="signuppassword">
+      <button onclick="signupbtnClicked()" id="signup"></button>
+      <p id="error-message"></p>
+      <p>Already Have an Account? <a href="login.html">Log In</a></p>
     </div>
   </main>
 
