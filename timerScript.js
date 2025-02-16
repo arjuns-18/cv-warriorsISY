@@ -16,6 +16,7 @@ const musicButton = document.getElementById('musicButton');
 const minuteInput = document.getElementById('minuteInput');
 const eggImage = document.getElementById('egg');
 const animalImage = document.getElementById('animal');
+const resultText = document.getElementById('resultText');
 
 function startCountdown() {
   const inputMinutes = parseInt(minuteInput.value, 10);
@@ -33,6 +34,7 @@ function startCountdown() {
   startButton.disabled = true;
   isTimerActive = true;
   animalImage.src = "";
+  resultText.textContent = ""; 
 }
 
 function updateCountdown() {
@@ -99,6 +101,7 @@ function animateFishAfterTimeUp() {
         }
       }
     }, fishInterval);
+    resultText.textContent = "You hatched an anglerfish"; 
   } else if (randomNumber === 2) {
     fishAnimationInterval = setInterval(() => {
       if (!isTimerActive) {
@@ -109,6 +112,7 @@ function animateFishAfterTimeUp() {
         }
       }
     }, fishInterval);
+    resultText.textContent = "You hatched an eel"; 
   } else if (randomNumber === 3) {
     fishAnimationInterval = setInterval(() => {
       if (!isTimerActive) {
@@ -119,6 +123,7 @@ function animateFishAfterTimeUp() {
         }
       }
     }, fishInterval);
+    resultText.textContent = "You hatched a octopus"; 
   } else if (randomNumber === 4) {
     fishAnimationInterval = setInterval(() => {
       if (!isTimerActive) {
@@ -129,15 +134,20 @@ function animateFishAfterTimeUp() {
         }
       }
     }, fishInterval);
+    resultText.textContent = "You hatched a turtle"; 
   }
 }
 
 function stopTimerAndBreakEgg() {
   clearInterval(timerInterval);
+  if (fishAnimationInterval) {
+    clearInterval(fishAnimationInterval);
+  }
   eggImage.src = "eggs/eggs7.png";
   animalImage.src = "";
   startButton.disabled = false;
   isTimerActive = false;
+  resultText.textContent = "You killed your egg"; 
 }
 
 document.addEventListener('visibilitychange', function () {
@@ -157,38 +167,3 @@ musicButton.addEventListener('click', () => {
 });
 
 startButton.addEventListener('click', startCountdown);
-
-// =======
-// document.addEventListener("DOMContentLoaded", function () {
-//   console.log("JavaScript Loaded"); // Debugging log
-
-//   const openMindfulnessBtn = document.getElementById("openMindfulness");
-//   const mindfulnessModal = document.getElementById("mindfulnessModal");
-//   const closeModal = document.querySelector(".close");
-
-//   if (!openMindfulnessBtn || !mindfulnessModal || !closeModal) {
-//       console.error("Modal elements not found! Check HTML structure.");
-//       return;
-//   }
-
-//   // Show modal when button is clicked
-//   openMindfulnessBtn.addEventListener("click", function () {
-//       console.log("Opening Modal"); // Debugging log
-//       mindfulnessModal.classList.add("show");
-//   });
-
-//   // Hide modal when close button is clicked
-//   closeModal.addEventListener("click", function () {
-//       console.log("Closing Modal"); // Debugging log
-//       mindfulnessModal.classList.remove("show");
-//   });
-
-//   // Hide modal if user clicks outside the modal content
-//   window.addEventListener("click", function (event) {
-//       if (event.target === mindfulnessModal) {
-//           console.log("Clicked Outside Modal"); // Debugging log
-//           mindfulnessModal.classList.remove("show");
-//       }
-//   });
-// });
-// >>>>>>> Stashed changes

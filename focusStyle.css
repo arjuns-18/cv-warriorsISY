@@ -113,39 +113,71 @@ body {
     transform: translate(-50%, -50%);
 }
 
+/* Modal Styling */
 .modal {
-    display: none; /* Keep it hidden initially */
-    position: fixed; /* Ensures it stays in place */
+    display: none; /* Hidden by default */
+    position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centers the modal */
-    width: 60vw; /* Adjust width */
-    max-width: 400px; /* Prevent it from being too large */
-    height: auto; /* Allow it to adjust */
-    max-height: 90vh; /* Prevent it from overflowing */
+    transform: translate(-50%, -50%);
+    width: 90vw; /* Increase width to 90% of the viewport width */
+    height: 80vh; /* Adjust height to 80% of the viewport height */
+    max-width: 600px; /* Set a max width for the modal */
+    max-height: 500px; /* Set a max height for the modal */
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
     overflow: hidden;
-    z-index: 9999; /* Ensures it stays above everything */
 }
 
-.modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 50%;
-    max-width: 500px;
+/* Rest of the modal content styles remain unchanged */
+
+/* Breathing Circle Styling */
+.container {
     position: relative;
-    overflow-x: hidden; /* remove horizontal scroll */
-      
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ensure container takes up all available height */
 }
 
-.close {
+/* Static Background Circle */
+.background-circle {
     position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
-    cursor: pointer;
+    width: 250px; /* Adjusted size */
+    height: 250px; /* Adjusted size */
+    background-color: rgba(68, 210, 205, 0.2);
+    border-radius: 50%;
+}
+
+/* Animated Breathing Circle */
+.circle {
+    width: 150px; /* Increase size of the circle */
+    height: 150px; /* Increase size of the circle */
+    background-color: #5dc7cb;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    animation: breathe 4s ease-in-out infinite;
+}
+
+.breathing-text {
+    font-size: 25px; /* Increase font size for better readability */
+    color: white;
+    font-weight: bold;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Breathing Animation */
+@keyframes breathe {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(2);
+    }
 }
