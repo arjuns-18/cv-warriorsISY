@@ -189,7 +189,6 @@ musicButton.addEventListener('click', () => {
 });
 
 startButton.addEventListener('click', startCountdown);
-startButton.addEventListener('click', startCountdown);
 
 
 // =======
