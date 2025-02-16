@@ -1,3 +1,50 @@
+nav {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 15px 30px;
+  border-radius: 35px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  /* Ensures nav stays on top */
+}
+
+nav ul {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: flex;
+  align-items: center;
+}
+
+nav ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+nav ul li a img {
+  width: 24px;
+  /* Fixed width instead of percentage */
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+nav ul li a:hover img {
+  transform: scale(1.2);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -28,6 +75,7 @@ body {
   border-radius: 50%;
 }
 
+
 /* Animated Breathing Circle */
 .circle {
   width: 100px;
@@ -56,4 +104,8 @@ body {
   50% {
       transform: scale(2);
   }
+}
+
+#closemodal{
+  cursor: pointer;
 }
