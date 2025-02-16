@@ -99,8 +99,18 @@ function animateFishAfterTimeUp() {
   index = 1;
   let randomNumber = Math.floor(Math.random() * 4) + 1;
   const fishInterval = 150; 
+  
   if (randomNumber === 1) {
     fishAnimationInterval = setInterval(() => {
+
+      if (!animalsUnlocked.includes("anglerfish")) { 
+        animalsUnlocked.push("anglerfish"); // Add anglerfish if not already unlocked
+
+        // Save the updated array to local storage
+        localStorage.setItem("animalsUnlocked", JSON.stringify(animalsUnlocked));
+    }
+
+
       if (!isTimerActive) {
         animalImage.src = `fishanimation/anglerfish/angler${index}.png`;
         index++;
@@ -110,8 +120,16 @@ function animateFishAfterTimeUp() {
       }
     }, fishInterval);
     resultText.textContent = "You hatched an anglerfish"; 
-  } else if (randomNumber === 2) {
+  } 
+  
+  else if (randomNumber === 2) {
     fishAnimationInterval = setInterval(() => {
+
+      if (!animalsUnlocked.includes(animalName)) {
+        animalsUnlocked.push(animalName);
+        localStorage.setItem("animalsUnlocked", JSON.stringify(animalsUnlocked));
+    }
+
       if (!isTimerActive) {
         animalImage.src = `fishanimation/eel/eel${index}.png`;
         index++;
@@ -121,8 +139,16 @@ function animateFishAfterTimeUp() {
       }
     }, fishInterval);
     resultText.textContent = "You hatched an eel"; 
-  } else if (randomNumber === 3) {
+  } 
+  
+  else if (randomNumber === 3) {
     fishAnimationInterval = setInterval(() => {
+
+      if (!animalsUnlocked.includes(animalName)) {
+        animalsUnlocked.push(animalName);
+        localStorage.setItem("animalsUnlocked", JSON.stringify(animalsUnlocked));
+    }
+
       if (!isTimerActive) {
         animalImage.src = `fishanimation/octopus/octopus${index}.png`;
         index++;
@@ -132,8 +158,16 @@ function animateFishAfterTimeUp() {
       }
     }, fishInterval);
     resultText.textContent = "You hatched a octopus"; 
-  } else if (randomNumber === 4) {
+  } 
+  
+  else if (randomNumber === 4) {
     fishAnimationInterval = setInterval(() => {
+
+      if (!animalsUnlocked.includes(animalName)) {
+        animalsUnlocked.push(animalName);
+        localStorage.setItem("animalsUnlocked", JSON.stringify(animalsUnlocked));
+    }
+
       if (!isTimerActive) {
         animalImage.src = `fishanimation/turtle/turtle${index}.png`;
         index++;
@@ -174,7 +208,6 @@ musicButton.addEventListener('click', () => {
   }
 });
 
-startButton.addEventListener('click', startCountdown);
 startButton.addEventListener('click', startCountdown);
 
 
