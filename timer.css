@@ -129,24 +129,17 @@ main {
 #egg {
     position: absolute;
     width: 10%;
-    top: 55%;
+    top: 62%;
     left: 50%;
     transform: translate(-50%, -50%);
     animation: float 3s ease-in-out infinite;
     filter: drop-shadow(0 0 20px rgba(255,255,255,0.2));
 }
 
-#resultText{
-    position: absolute;
-    width: 10%;
-    top: 60%;
-    left: 50%;
-}
-
 #animal {
     position: absolute;
     width: 10%;
-    top: 44%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -354,17 +347,17 @@ nav ul li a:hover img {
     color: #ffffff;  /* Bright red color */
     font-size: 24px;
     font-weight: bold;
-    flex:50%;
+    flex: 50%;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     
     position: fixed;
     top: 70%;
-    left: 41%;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 20px;
     margin: 0;
     animation: shake 0.5s ease-in-out;
     white-space: nowrap;
-    
 }
 
 .close:hover {
@@ -481,18 +474,6 @@ nav ul li a:hover img {
     animation: float 2s ease-in-out infinite;
 }
 
-#resultText {
-    color: #ff3333;  /* Bright red color */
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
-    padding: 20px;
-    margin: 15px auto;
-    animation: shake 0.5s ease-in-out;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
 @keyframes shake {
     0%, 100% { transform: translateX(0); }
     25% { transform: translateX(-10px); }
@@ -550,7 +531,7 @@ nav ul li a:hover img {
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.3);
     position: absolute;
-    bottom: 120px; /* Adjust this value to move button up/down */
+    bottom: 100px; /* Adjust this value to move button up/down */
     left: 50%;
     transform: translateX(-50%);
 }

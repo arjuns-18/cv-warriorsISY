@@ -2,6 +2,7 @@ let timerInterval;
 let time;
 let originalTime;
 let eggCrack = new Audio("sounds/eggcrack.mp3");
+let eggBreak = new Audio("sounds/eggbreak.mp3");
 let isTimerActive = false;  
 let fishAnimationInterval;
 let index = 1;
@@ -9,6 +10,10 @@ let playedHalf = false;
 let playedQuarter = false;
 let currentTrackIndex = 0;
 let playedZero = false;
+let eelEggs = 0;
+let anglerfishEggs= 0;
+let octopusEggs = 0;
+let turtleEggs=0;
 
 let animalsUnlocked = JSON.parse(localStorage.getItem("animalsUnlocked")) || [];
 
@@ -104,13 +109,9 @@ function animateFishAfterTimeUp() {
     fishAnimationInterval = setInterval(() => {
 
       if (!animalsUnlocked.includes("anglerfish")) { 
-        animalsUnlocked.push("anglerfish"); // Add anglerfish if not already unlocked
-
-        // Save the updated array to local storage
+        animalsUnlocked.push("anglerfish");
         localStorage.setItem("animalsUnlocked", JSON.stringify(animalsUnlocked));
-    }
-
-
+      }
       if (!isTimerActive) {
         animalImage.src = `fishanimation/anglerfish/angler${index}.png`;
         index++;
@@ -120,16 +121,14 @@ function animateFishAfterTimeUp() {
       }
     }, fishInterval);
     resultText.textContent = "You hatched an anglerfish"; 
-  } 
-  
-  else if (randomNumber === 2) {
+    anglerfishEggs = anglerfishEggs + 1;
+    console.log(anglerfishEggs)
+  } else if (randomNumber === 2) {
     fishAnimationInterval = setInterval(() => {
-
-      if (!animalsUnlocked.includes(animalName)) {
-        animalsUnlocked.push(animalName);
+      if (!animalsUnlocked.includes("eel")) {
+        animalsUnlocked.push("eel");
         localStorage.setItem("animalsUnlocked", JSON.stringify(animalsUnlocked));
-    }
-
+      }
       if (!isTimerActive) {
         animalImage.src = `fishanimation/eel/eel${index}.png`;
         index++;
@@ -139,16 +138,14 @@ function animateFishAfterTimeUp() {
       }
     }, fishInterval);
     resultText.textContent = "You hatched an eel"; 
-  } 
-  
-  else if (randomNumber === 3) {
+    eelEggs = eelEggs + 1;
+    console.log(eelEggs);
+  } else if (randomNumber === 3) {
     fishAnimationInterval = setInterval(() => {
-
-      if (!animalsUnlocked.includes(animalName)) {
-        animalsUnlocked.push(animalName);
+      if (!animalsUnlocked.includes("octopus")) {
+        animalsUnlocked.push("octopus");
         localStorage.setItem("animalsUnlocked", JSON.stringify(animalsUnlocked));
-    }
-
+      }
       if (!isTimerActive) {
         animalImage.src = `fishanimation/octopus/octopus${index}.png`;
         index++;
@@ -157,17 +154,15 @@ function animateFishAfterTimeUp() {
         }
       }
     }, fishInterval);
-    resultText.textContent = "You hatched a octopus"; 
-  } 
-  
-  else if (randomNumber === 4) {
+    resultText.textContent = "You hatched an octopus"; 
+    octopusEggs = octopusEggs + 1;
+    console.log(octopusEggs)
+  } else if (randomNumber === 4) {
     fishAnimationInterval = setInterval(() => {
-
-      if (!animalsUnlocked.includes(animalName)) {
-        animalsUnlocked.push(animalName);
+      if (!animalsUnlocked.includes("turtle")) {
+        animalsUnlocked.push("turtle");
         localStorage.setItem("animalsUnlocked", JSON.stringify(animalsUnlocked));
-    }
-
+      }
       if (!isTimerActive) {
         animalImage.src = `fishanimation/turtle/turtle${index}.png`;
         index++;
@@ -177,6 +172,8 @@ function animateFishAfterTimeUp() {
       }
     }, fishInterval);
     resultText.textContent = "You hatched a turtle"; 
+    turtleEggs = turtleEggs + 1;
+    console.log(turtleEggs)
   }
 }
 
@@ -192,11 +189,12 @@ function stopTimerAndBreakEgg() {
   resultText.textContent = "You killed your egg"; 
 }
 
-// document.addEventListener('visibilitychange', function () {
-//   if (document.hidden && isTimerActive) {
-//     stopTimerAndBreakEgg();
-//   }
-// });
+document.addEventListener('visibilitychange', function () {
+  if (document.hidden && isTimerActive) {
+    stopTimerAndBreakEgg();
+    eggBreak.play();
+  }
+});
 
 musicButton.addEventListener('click', () => {
   if (tracks[currentTrackIndex].paused) {
@@ -208,7 +206,6 @@ musicButton.addEventListener('click', () => {
   }
 });
 
-startButton.addEventListener('click', startCountdown);
 startButton.addEventListener('click', startCountdown);
 
 
