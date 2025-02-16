@@ -10,17 +10,12 @@ let playedQuarter = false;
 let currentTrackIndex = 0;
 let playedZero = false;
 
-<<<<<<< HEAD
-let animalsUnlocked = [];
-
-=======
 const tracks = [
   new Audio("sounds/lofi1.mp3"),
   new Audio("sounds/lofi2.mp3"),
   new Audio("sounds/lofi3.mp3"),
   new Audio("sounds/lofi4.mp3")
 ];
->>>>>>> f316e18ed060208b2e0827146b285d251b32e385
 const countdownEl = document.getElementById('countdown');
 const musicButton = document.getElementById('musicButton');
 const minuteInput = document.getElementById('minuteInput');
