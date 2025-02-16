@@ -3,20 +3,26 @@ let time;
 let originalTime;
 let eggCrack = new Audio("sounds/eggcrack.mp3");
 let isTimerActive = false;  
-let lofi1 = new Audio("sounds/lofi1.mp3");
-let lofi2 = new Audio("sounds/lofi2.mp3");
 let fishAnimationInterval;
 let index = 1;
 let playedHalf = false;
 let playedQuarter = false;
+let currentTrackIndex = 0;
 let playedZero = false;
 
+const tracks = [
+  new Audio("sounds/lofi1.mp3"),
+  new Audio("sounds/lofi2.mp3"),
+  new Audio("sounds/lofi3.mp3"),
+  new Audio("sounds/lofi4.mp3")
+];
 const countdownEl = document.getElementById('countdown');
 const musicButton = document.getElementById('musicButton');
 const minuteInput = document.getElementById('minuteInput');
 const eggImage = document.getElementById('egg');
 const animalImage = document.getElementById('animal');
 const resultText = document.getElementById('resultText');
+const switchButton = document.getElementById('switchButton'); 
 
 function startCountdown() {
   const inputMinutes = parseInt(minuteInput.value, 10);
@@ -157,18 +163,16 @@ document.addEventListener('visibilitychange', function () {
 });
 
 musicButton.addEventListener('click', () => {
-  if (lofi1.paused) {
-    lofi1.play();
+  if (tracks[currentTrackIndex].paused) {
+    tracks[currentTrackIndex].play();
     musicButton.textContent = "Pause Music";
   } else {
-    lofi1.pause();
+    tracks[currentTrackIndex].pause();
     musicButton.textContent = "Play Music";
   }
 });
 
-<<<<<<< Updated upstream
 startButton.addEventListener('click', startCountdown);
-=======
 startButton.addEventListener('click', startCountdown);
 
 
@@ -206,4 +210,15 @@ startButton.addEventListener('click', startCountdown);
 //   });
 // });
 // >>>>>>> Stashed changes
->>>>>>> Stashed changes
+switchButton.addEventListener('click', () => {
+  let wasPlaying = !tracks[currentTrackIndex].paused;
+  tracks[currentTrackIndex].pause();
+  tracks[currentTrackIndex].currentTime = 0;
+  currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+  if (wasPlaying) {
+    tracks[currentTrackIndex].play();
+    musicButton.textContent = "Pause Music";
+  }
+});
+
+startButton.addEventListener('click', startCountdown);
