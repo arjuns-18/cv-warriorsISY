@@ -12,7 +12,7 @@ let playedQuarter = false;
 let playedZero = false;
 
 const countdownEl = document.getElementById('countdown');
-const startButton = document.getElementById('startButton');
+const musicButton = document.getElementById('musicButton');
 const minuteInput = document.getElementById('minuteInput');
 const eggImage = document.getElementById('egg');
 const animalImage = document.getElementById('animal');
@@ -140,17 +140,22 @@ function stopTimerAndBreakEgg() {
   isTimerActive = false;
 }
 
-function playLofi(){
-  lofi1.play();
-}
-
 document.addEventListener('visibilitychange', function () {
   if (document.hidden && isTimerActive) {
     stopTimerAndBreakEgg();
   }
 });
 
-playButton.addEventListener('click', playLofi);
+musicButton.addEventListener('click', () => {
+  if (lofi1.paused) {
+    lofi1.play();
+    musicButton.textContent = "Pause Music";
+  } else {
+    lofi1.pause();
+    musicButton.textContent = "Play Music";
+  }
+});
+
 startButton.addEventListener('click', startCountdown);
 
 // =======
