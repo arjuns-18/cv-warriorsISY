@@ -129,7 +129,7 @@ main {
 #egg {
     position: absolute;
     width: 10%;
-    top: 55%;
+    top: 62%;
     left: 50%;
     transform: translate(-50%, -50%);
     animation: float 3s ease-in-out infinite;
@@ -146,7 +146,7 @@ main {
 #animal {
     position: absolute;
     width: 10%;
-    top: 44%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -358,7 +358,7 @@ nav ul li a:hover img {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     
     position: fixed;
-    top: 70%;
+    top: 65%;
     left: 41%;
     padding: 20px;
     margin: 0;
@@ -482,7 +482,7 @@ nav ul li a:hover img {
 }
 
 #resultText {
-    color: #ff3333;  /* Bright red color */
+    color: #ffffff;  /* Bright red color */
     font-size: 24px;
     font-weight: bold;
     text-align: center;
@@ -550,7 +550,7 @@ nav ul li a:hover img {
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.3);
     position: absolute;
-    bottom: 120px; /* Adjust this value to move button up/down */
+    bottom: 100px; /* Adjust this value to move button up/down */
     left: 50%;
     transform: translateX(-50%);
 }
