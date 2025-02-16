@@ -9,6 +9,12 @@
     color: blue;
 }
 
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
 body {
     background-image: url('backgrounds/settingsBackground.jpg');
     background-repeat: no-repeat;
